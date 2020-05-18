@@ -1,0 +1,23 @@
+----------- ÖNEMLİ NOTLAR ----------
+
+-- pubspec.yaml dosyası dışarıdan kütüphane eklememiz gerektiğinde kullanılır. dosya içindeki dev_dependecies yazan kısmın altına eklenir.
+
+-- child: tek bir alt widget ekleneceği zaman kullanılır. 
+
+-- children: birden fazla alt widget ekleneceği zaman kullanılır. 
+
+-- firebase'i projede dahil etmek için;
+önce Google hesabında oturum açıp ve firebase'in sitesine (https://firebase.google.com) girmek. 
+firebase eklentisi ve kurulumu için sol tarafta app klasörünün altında build.gradle dosyasını firebase'in sitesindeki yönergeleri takip ederek ekliyoruz.
+daha sonra dart packages (https://pub.dev) sitesine girip arama butonuna firebase_auth eklentisini bulup açıyoruz. (bu eklenti ile uygulama arasında authentication yani kimlik doğrulama için gerekli)
+alt sekmelerde installing kısmını açıp dependencies yazan yeri kopyalayıp projedeki pubspec.yaml dosyasının içindeki dependencies kısmına yapıştırıyoruz
+sonra siteye tekrar gelip sayfanın en sonundaki import kısmını kopyalayıp projedeki main dosyamızın en başına import ediyoruz.
+ve projemiz firebase bağlantısını gerçekleştirmiş oluyoruz.
+
+-- firebase de veritabanı oluşturmak için cloudFirestore açıyoruz ve test(projeye göre değişir) modunda başla diyoruz. konuma bir şey eklemiyoruz ve bitti diyoruz.
+koleksiyon başlat'a basıp veritabanı adını yazıyoruz. firebase'de ağaç mantığı vardır. key-value şeklinde kayıt yapılabiliyor. mesela: belge olarak bir kişi ekleyip, alan olarak da kişinin yaşı, cinsiyeti gibi veriler ekleyebiliriz.
+
+-- projeye cloudFirestore eklemek için dart packages sitesinden cloud_firestore aratıp installing sekmesini açıyoruz. dependencies kısmını kopyalıyoruz ve projemideki pubspec.yaml dosyasındaki dependencies kısmına yapıştırıyoruz. sonra çalıştır diyoruz. 
+eğer hata çıkarsa projenin sol taraftaki app-> build.gradle dosyasındaki defaultConfig  kısmına multiDexEnabled true yazıyoruz. alttaki dependencies kısına implementation "androidx.multidex:multidex:1.0.3" yazıyoruz. (güncel halini netten multidex yazıp bulabilirsiniz)
+sonra projedeki anasayfamıza cloudFirestore'daki installing sayfasının en altındaki import kısmında yazan import kodunu yapıştırıyoruz.
+ve projemize cloud  firestore bağlantısını yapmış oluyoruz.
